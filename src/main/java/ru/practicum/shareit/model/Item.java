@@ -3,12 +3,15 @@ package ru.practicum.shareit.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString(exclude = {"owner", "request"})
+@ToString(exclude = {"owner", "offers"})
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "items")
@@ -32,9 +35,8 @@ public class Item {
     @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private User owner;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "request_id", referencedColumnName = "id")
-    private ItemRequest request;
-
-
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ItemRequestOffer> offers = new LinkedHashSet<>();
 }
+
+

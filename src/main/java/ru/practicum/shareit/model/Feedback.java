@@ -27,7 +27,7 @@ public class Feedback {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
     @Column(length = 500, nullable = false)
-    private String text;
+    private String description;
     @Column(name = "created_at")
     private LocalDateTime created;
 
