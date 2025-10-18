@@ -3,6 +3,7 @@ package ru.practicum.shareit.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -26,9 +27,12 @@ public class Feedback {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-    @Column(length = 500, nullable = false)
+    @Column(length = 500)
     private String description;
-    @Column(name = "created_at")
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime created;
+    @Column(name = "rating", nullable = false)
+    private Short rating;
 
 }
