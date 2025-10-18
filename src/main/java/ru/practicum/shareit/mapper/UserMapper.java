@@ -2,8 +2,8 @@ package ru.practicum.shareit.mapper;
 
 
 
-import ru.practicum.shareit.dto.UserCreateDto;
-import ru.practicum.shareit.dto.UserDto;
+import ru.practicum.shareit.dto.user.UserCreateDto;
+import ru.practicum.shareit.dto.user.UserDto;
 import ru.practicum.shareit.model.User;
 
 

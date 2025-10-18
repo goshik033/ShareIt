@@ -1,4 +1,4 @@
-package ru.practicum.shareit.service;
+package ru.practicum.shareit.service.user;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -7,9 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.practicum.shareit.dto.UserCreateDto;
-import ru.practicum.shareit.dto.UserDto;
-import ru.practicum.shareit.dto.UserUpdateDto;
+import ru.practicum.shareit.dto.user.UserCreateDto;
+import ru.practicum.shareit.dto.user.UserDto;
+import ru.practicum.shareit.dto.user.UserUpdateDto;
 import ru.practicum.shareit.mapper.UserMapper;
 import ru.practicum.shareit.model.User;
 import ru.practicum.shareit.repository.UserRepository;
@@ -33,14 +33,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto getById(Long id) {
+    public UserDto findById(Long id) {
         User user = repo.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("User not found: " + id));
+                .orElseThrow(() -> new EntityNotFoundException("User не найден: " + id));
         return UserMapper.toDto(user);
     }
 
     @Override
-    public Page<UserDto> getAll(Pageable pageable) {
+    public Page<UserDto> findAll(Pageable pageable) {
         return repo.findAll(pageable).map(UserMapper::toDto);
     }
 
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public UserDto update(Long id, UserUpdateDto dto) {
         User user = repo.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("User not found: " + id));
+                .orElseThrow(() -> new EntityNotFoundException("User не найден: " + id));
 
         if (dto.getName() != null) {
             user.setName(dto.getName());
