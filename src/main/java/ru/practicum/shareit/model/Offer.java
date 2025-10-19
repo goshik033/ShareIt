@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
         uniqueConstraints = @UniqueConstraint(columnNames = {"request_id", "item_id"}))
 @Getter
 @Setter
-public class ItemRequestOffer {
+public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

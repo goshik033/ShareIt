@@ -36,7 +36,7 @@ public class Item {
     private User owner;
 
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<ItemRequestOffer> offers = new LinkedHashSet<>();
+    private Set<Offer> offers = new LinkedHashSet<>();
 }
 
 

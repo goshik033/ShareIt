@@ -39,5 +39,5 @@ public class ItemRequest {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @OneToMany(mappedBy = "request", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<ItemRequestOffer> offers = new LinkedHashSet<>();
+    private Set<Offer> offers = new LinkedHashSet<>();
 }
