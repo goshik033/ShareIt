@@ -35,5 +35,5 @@ public class ItemRequestOffer {
     private String comment;
     @Enumerated(EnumType.STRING)
     @Column(name = "offer_status", nullable = false, length = 32)
-    private OfferStatus offerStatus = OfferStatus.PROPOSED;  // PROPOSED / ACCEPTED / REJECTED
+    private OfferStatus offerStatus = OfferStatus.PROPOSED;
 }

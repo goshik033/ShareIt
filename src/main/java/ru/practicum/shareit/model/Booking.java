@@ -35,12 +35,12 @@ public class Booking {
 
     @NotNull
     @FutureOrPresent
-    @Column(nullable = false)
+    @Column(name = "start_time",nullable = false)
     private LocalDateTime start;
 
     @NotNull
     @Future
-    @Column(nullable = false)
+    @Column(name = "end_time",nullable = false)
     private LocalDateTime end;
 
     @NotNull
@@ -52,7 +52,7 @@ public class Booking {
     @PreUpdate
     private void validateDates() {
         if (start != null && end != null && !end.isAfter(start)) {
-            throw new IllegalArgumentException("end must be strictly after start");
+            throw new IllegalArgumentException("конец должен быть строго после начала");
         }
     }
 

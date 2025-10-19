@@ -1,6 +1,5 @@
 package ru.practicum.shareit.dto.booking;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import ru.practicum.shareit.model.BookingStatus;
 

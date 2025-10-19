@@ -4,9 +4,9 @@ import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import ru.practicum.shareit.model.BookingStatus;
 
 import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -19,6 +19,5 @@ public class BookingCreateDto {
     @NotNull
     @Future
     private LocalDateTime end;
-    @NotNull
-    private BookingStatus status;
+
 }

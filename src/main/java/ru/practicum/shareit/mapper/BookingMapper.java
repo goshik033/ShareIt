@@ -8,12 +8,13 @@ import ru.practicum.shareit.model.Item;
 import ru.practicum.shareit.model.User;
 
 public final class BookingMapper {
-    private BookingMapper() {}
+    private BookingMapper() {
+    }
 
-    public static Booking toEntity(BookingCreateDto dto, Item item, User booker) {
+    public static Booking toEntity(BookingCreateDto dto, User user, Item item) {
         return Booking.builder()
                 .item(item)
-                .user(booker)
+                .user(user)
                 .start(dto.getStart())
                 .end(dto.getEnd())
                 .status(BookingStatus.WAITING)
