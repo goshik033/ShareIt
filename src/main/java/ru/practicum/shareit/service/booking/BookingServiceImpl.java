@@ -36,9 +36,11 @@ public class BookingServiceImpl implements BookingService {
         Item item = itemRepository.findById(itemId)
                 .orElseThrow(() -> new EntityNotFoundException("Item не найден: " + itemId));
         Booking saved = bookingRepository.save(BookingMapper.toEntity(dto, user, item));
+
         return BookingMapper.toDto(saved);
 
     }
+
 
     @Transactional
     public BookingDto update(BookingUpdateDto dto, Long id) {

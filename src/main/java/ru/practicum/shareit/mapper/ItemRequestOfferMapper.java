@@ -1,8 +1,8 @@
 package ru.practicum.shareit.mapper;
 
 
-import ru.practicum.shareit.dto.Offer.OfferCreateDto;
-import ru.practicum.shareit.dto.Offer.OfferDto;
+import ru.practicum.shareit.dto.offer.OfferCreateDto;
+import ru.practicum.shareit.dto.offer.OfferDto;
 import ru.practicum.shareit.model.Item;
 import ru.practicum.shareit.model.ItemRequest;
 import ru.practicum.shareit.model.Offer;

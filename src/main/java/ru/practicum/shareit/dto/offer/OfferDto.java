@@ -1,4 +1,4 @@
-package ru.practicum.shareit.dto.Offer;
+package ru.practicum.shareit.dto.offer;
 
 import lombok.*;
 import ru.practicum.shareit.model.OfferStatus;
